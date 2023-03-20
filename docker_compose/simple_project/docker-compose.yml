@@ -3,8 +3,8 @@ services:
   web:
     build: app
     command: uwsgi --strict --ini uwsgi.ini
-    expose:
-      - "8000"
+    ports:
+      - 8000:8000
     volumes:
       - static_vol:/opt/app/static
       - media_vol:/opt/app/media
