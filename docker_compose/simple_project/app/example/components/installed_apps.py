@@ -7,4 +7,5 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'movies.apps.MoviesConfig',
+    'debug_toolbar',
 ]
