@@ -33,9 +33,20 @@ services:
       - static_vol:/opt/app/static
       - media_vol:/opt/app/media
     ports:
-      - 8080:80
+      - 80:80
     depends_on:
       - web
+
+  swagger:
+    image: swaggerapi/swagger-ui
+    volumes:
+      - ./openapi.yaml:/swagger.yaml
+    env_file:
+      - ./.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - nginx
 
 
 volumes:
